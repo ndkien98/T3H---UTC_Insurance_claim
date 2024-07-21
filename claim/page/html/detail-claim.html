@@ -20,8 +20,65 @@
   <script src="../assets/js/config.js"></script>
 </head>
 <body>
+
 <div class="layout-wrapper layout-content-navbar">
   <div class="layout-container">
+    <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+      <div class="app-brand demo">
+        <a href="index.html" class="app-brand-link">
+          <span class="app-brand-logo demo">
+              <img src="../assets/img/custom/BIDV_MetLife.png" style="width: 12%">
+          </span>
+        </a>
+
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+          <i class="bx bx-chevron-left bx-sm align-middle"></i>
+        </a>
+      </div>
+
+      <div class="menu-inner-shadow"></div>
+
+      <ul class="menu-inner py-1">
+        <!-- Dashboard -->
+        <li class="menu-item active">
+          <a href="index.html" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <div data-i18n="Analytics">Dashboard</div>
+          </a>
+        </li>
+        <!-- Insurance Processes -->
+        <li class="menu-item">
+          <a href="claim-manager.html" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-file"></i>
+            <div data-i18n="Claims">Claims</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="tables-basic.html" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-shield"></i>
+            <div data-i18n="Underwriting">Underwriting</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="ui-tabs-pills.html" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-book"></i>
+            <div data-i18n="Policies">Policies</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="form-layouts-horizontal.html" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-money"></i>
+            <div data-i18n="Billing">Billing</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="pages-account-settings-connections.html" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-support"></i>
+            <div data-i18n="Customer Service">Customer Service</div>
+          </a>
+        </li>
+      </ul>
+    </aside>
     <div class="layout-page">
       <div class="content-wrapper">
         <div class="container-xxl flex-grow-1 container-p-y">
