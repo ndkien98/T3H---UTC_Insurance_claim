@@ -1,0 +1,46 @@
+Buổi 1: Giới thiệu và Phân tích thiết kế hệ thống
+Thời gian: 2 tiếng
+ • Giới thiệu chung:
+ ◦ Giới thiệu về hệ thống quản lý quy trình yêu cầu bồi thường bảo hiểm.
+ ◦ Các công nghệ chính sử dụng: Java, Spring Boot, MySQL, Docker.
+ • Phân tích yêu cầu:
+ ◦ Xác định các yêu cầu nghiệp vụ và chức năng.
+ ◦ Lập bản đặc tả yêu cầu.
+ • Thiết kế kiến trúc hệ thống:
+ ◦ Mô hình hóa quy trình yêu cầu bồi thường.
+ ◦ Thiết kế các thành phần chính của hệ thống.
+Buổi 2: Thiết kế database và Giao diện người dùng
+Thời gian: 2 tiếng
+ • Thiết kế database:
+ ◦ Xác định các bảng và mối quan hệ giữa các bảng.
+ ◦ Tạo sơ đồ ER (Entity-Relationship).
+ ◦ Thiết kế chi tiết các bảng và cột.
+ • Thiết kế giao diện người dùng:
+ ◦ Nguyên tắc thiết kế UI/UX.
+ ◦ Thiết kế mockup và wireframe cho các màn hình chính.
+ ◦ Công cụ hỗ trợ thiết kế giao diện.
+Buổi 3: Phát triển Backend và Tích hợp với Database
+Thời gian: 2 tiếng
+ • Phát triển Backend:
+ ◦ Giới thiệu Spring Boot và các thành phần cơ bản.
+ ◦ Tạo project Spring Boot.
+ ◦ Xây dựng các API chính của hệ thống.
+ • Tích hợp với Database:
+ ◦ Cấu hình kết nối MySQL.
+ ◦ Sử dụng JPA/Hibernate để tương tác với database.
+ ◦ Thực hiện các thao tác CRUD (Create, Read, Update, Delete).
+Buổi 4: Triển khai và Docker hóa ứng dụng
+Thời gian: 2 tiếng
+ • Triển khai ứng dụng:
+ ◦ Giới thiệu về Docker và containerization.
+ ◦ Tạo Dockerfile cho ứng dụng Spring Boot.
+ ◦ Tạo docker-compose file để quản lý nhiều container.
+ • Thực hành triển khai:
+ ◦ Xây dựng và chạy ứng dụng trong container.
+ ◦ Quản lý container bằng Docker Compose.
+ ◦ Kiểm tra và debug ứng dụng.
+Tổng kết
+ • Q&A và Tổng kết khóa học:
+ ◦ Giải đáp thắc mắc của học viên.
+ ◦ Tổng kết và đánh giá lộ trình đào tạo.
+ ◦ Đưa ra hướng phát triển tiếp theo.
