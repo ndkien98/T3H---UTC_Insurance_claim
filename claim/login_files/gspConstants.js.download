@@ -1,1 +1,0 @@
-define({ajaxCall:"ajaxCall",formSubmit:"formSubmit",fileUpload:"FileUpload",fileDownload:"FileDownload",overlayBackGroundDivId:"fg_backgroundpopup"});
