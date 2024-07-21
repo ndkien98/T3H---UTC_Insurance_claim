@@ -1,4 +1,4 @@
-package com.t3h.insuranceclaim.controller;
+package com.t3h.insuranceclaim.controller.resource;
 
 import com.t3h.insuranceclaim.dto.ClaimStatusDTO;
 import com.t3h.insuranceclaim.service.ClaimStatusService;
