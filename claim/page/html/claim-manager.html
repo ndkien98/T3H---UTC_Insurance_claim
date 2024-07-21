@@ -282,5 +282,30 @@
 <script src="../assets/vendor/js/menu.js"></script>
 <script src="../assets/js/main.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Lấy tất cả các thẻ th có nội dung là "Mã yêu cầu bồi thường"
+    const thElements = document.querySelectorAll('th');
+
+    thElements.forEach(th => {
+      if (th.textContent.trim() === 'Mã yêu cầu bồi thường') {
+        // Lấy tất cả các td trong cùng cột với th này
+        const thIndex = Array.from(th.parentNode.children).indexOf(th);
+        const tdElements = document.querySelectorAll('tbody tr td:nth-child(' + (thIndex + 1) + ')');
+
+        tdElements.forEach(td => {
+          // Bọc nội dung của td trong thẻ a
+          const a = document.createElement('a');
+          a.href = 'detail-claim.html';
+          a.textContent = td.textContent;
+          td.textContent = '';
+          td.appendChild(a);
+        });
+      }
+    });
+  });
+</script>
+
 </body>
 </html>

@@ -2432,6 +2432,7 @@
 
 
     <link rel="stylesheet" href="./homeguest_files/site-component.min.css" type="text/css">
+    <link rel="stylesheet" href="./homeguest_files/custom.css" type="text/css">
 
 
     <style>.guideCheckBoxGroupItems,
@@ -2655,7 +2656,7 @@
                 <div class="col login-trigger linkOnly login-trigger--minimized" title="Tài khoản"
                      data-target="login-container">
                     <a id="vn__global-loginPagePath" class="login-trigger__label"
-                       href="https://www.bidvmetlife.com.vn/vn/login/" target="_self" aria-label="Tài khoản">
+                       href="loginmetlife.html" target="_self" aria-label="Tài khoản">
                         <svg class="icon icon-profile2" aria-hidden="true">
                             <use xlink:href="/static/images/icons-metlife.svg#icon-profile2"></use>
                         </svg>
@@ -6319,57 +6320,10 @@
             </div>
 
             <div class="category-banner parbase section">
-                <style>
-                    .contact-container.contact-container--form-card {
-                        padding: 20px;
-                        border-radius: 10px;
-                        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-                    }
-                    .contactCard {
-                        padding: 20px;
-                        border-radius: 10px;
-                        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-                    }
-                    .card-header {
-                        background-color: #f8f9fa;
-                        padding: 15px;
-                        border-bottom: 1px solid #e9ecef;
-                        border-top-left-radius: 10px;
-                        border-top-right-radius: 10px;
-                    }
-                    .card-body {
-                        padding: 20px;
-                    }
-                    .form-control {
-                        margin-bottom: 10px;
-                    }
-                    .footer-lead-form.parbase.section {
-                        padding: 20px;
-                        background-color: #fff;
-                        border-radius: 10px;
-                        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-                    }
-                    .layout-wrapper {
-                        display: flex;
-                        justify-content: space-between;
-                    }
-                    .layout1, .layout2 {
-                        flex: 0 0 48%;
-                    }
-                    .layout3 {
-                        margin-top: 20px;
-                        width: 100%;
-                    }
-                </style>
-                <div class="card-header d-flex align-items-center justify-content-between" style="
-    padding-left: 12%;
-    padding-right: 12%;">
+                <div class="card-header d-flex align-items-center justify-content-between" style="padding-left: 12%; padding-right: 12%;">
                     <h3>Tạo yêu cầu bồi thường</h3>
                 </div>
-                <div class="card-body" style="
-    padding-left: 12%;
-    padding-right: 12%;
-">
+                <div class="card-body" style="padding-left: 12%; padding-right: 12%;">
                     <form>
                         <h3>Thông tin yêu cầu bồi thường</h3>
                         <div class="layout-wrapper">
@@ -6410,8 +6364,12 @@
                         </div>
                         <div class="layout3">
                             <h3>Danh sách tài liệu liên quan</h3>
+                            <div class="upload-section">
+                                <label for="file-upload">Tải lên tài liệu</label>
+                                <input type="file" id="file-upload" multiple>
+                            </div>
                             <div class="table-responsive text-nowrap">
-                                <table class="table">
+                                <table class="table table-bordered">
                                     <thead>
                                     <tr>
                                         <th>Tên file</th>
@@ -6421,18 +6379,7 @@
                                     </tr>
                                     </thead>
                                     <tbody id="document-list">
-                                    <tr>
-                                        <td>document1.pdf</td>
-                                        <td>PDF</td>
-                                        <td>2024-07-19</td>
-                                        <td><button class="btn btn-sm btn-info view-btn" data-file="/path/to/document1.pdf">Xem</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>image1.jpg</td>
-                                        <td>Image</td>
-                                        <td>2024-07-19</td>
-                                        <td><button class="btn btn-sm btn-info view-btn" data-file="/path/to/image1.jpg">Xem</button></td>
-                                    </tr>
+                                    <!-- Uploaded files will be displayed here -->
                                     </tbody>
                                 </table>
                             </div>
@@ -6443,8 +6390,10 @@
                             </div>
                         </div>
                     </form>
-                    <button  class="btn btn-brand-2nd" target="_self" role="button">Tạo yêu cầu</button>
+                    <button class="btn btn-brand-2nd" target="_self" role="button">Tạo yêu cầu</button>
                 </div>
+
+
             </div>
 
             <div class="category-banner parbase section">
@@ -7182,7 +7131,7 @@
             <tbody class="ss-gac-m" id="search_suggest" style="visibility: hidden;"></tbody>
         </table>
     </div>
-
+    <script src="homeguest_files/custom.js"></script>
 
     <script src="./homeguest_files/site-vendor.min.js.download"></script>
 
