@@ -1,9 +1,9 @@
-package com.t3h.insurance_claim;
+package com.t3h.insuranceclaim;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.t3h.insuranceclaim")
 public class InsuranceClaimApplication {
 
 	public static void main(String[] args) {

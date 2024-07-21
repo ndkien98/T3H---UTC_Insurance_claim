@@ -1,5 +1,5 @@
 
-package com.t3h.insurance_claim.entity;
+package com.t3h.insuranceclaim.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -9,11 +9,19 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-public class ClaimStatus {
+public class ClaimDocument {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "claim_id")
+    private Claim claim;
+
+    private String documentType;
+    private String documentName;
+    private String filePath;
+    private LocalDate uploadDate;
     private LocalDateTime createdDate;
     private String createdBy;
     private LocalDateTime lastModifiedDate;
