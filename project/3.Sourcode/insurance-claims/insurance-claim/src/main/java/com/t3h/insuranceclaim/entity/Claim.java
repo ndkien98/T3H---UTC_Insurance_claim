@@ -28,7 +28,7 @@ public class Claim {
 
     private LocalDate claimDate;
     private String description;
-    private double account;
+    private double amount;
     private LocalDateTime createdDate;
     private String createdBy;
     private LocalDateTime lastModifiedDate;
