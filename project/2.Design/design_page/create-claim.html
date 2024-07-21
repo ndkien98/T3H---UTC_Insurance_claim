@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head dir="ltr" class="at-element-marker">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        .contact-container.contact-container--form-card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .contactCard {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .card-header {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .form-control {
+            margin-bottom: 10px;
+        }
+        .footer-lead-form.parbase.section {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .layout-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+        .layout1, .layout2 {
+            flex: 0 0 48%;
+        }
+        .layout3 {
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="row wrapper form-card in_view on">
+    <div class="contact-container contact-container--form-card bg-white contactAdvisor" style="min-height: 1074px;">
+        <div class="card mb-4">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <h5 class="mb-0">Tạo yêu cầu bồi thường</h5>
+            </div>
+            <div class="card-body">
+                <form>
+                    <h6 class="mb-3">Thông tin yêu cầu</h6>
+                    <div class="layout-wrapper">
+                        <div class="layout1">
+                            <div class="row mb-3">
+                                <label class="col-sm-12 col-form-label" for="customer-name">Tên khách hàng</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="customer-name" placeholder="Nhập tên khách hàng" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-12 col-form-label" for="customer-email">Email khách hàng</label>
+                                <div class="col-sm-12">
+                                    <input type="email" class="form-control" id="customer-email" placeholder="Nhập email khách hàng" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-12 col-form-label" for="customer-phone">Số điện thoại khách hàng</label>
+                                <div class="col-sm-12">
+                                    <input type="tel" class="form-control" id="customer-phone" placeholder="Nhập số điện thoại khách hàng" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layout2">
+                            <div class="row mb-3">
+                                <label class="col-sm-12 col-form-label" for="insurance-product">Tên sản phẩm bảo hiểm</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="insurance-product" placeholder="Nhập tên sản phẩm bảo hiểm" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-12 col-form-label" for="claim-description">Mô tả yêu cầu</label>
+                                <div class="col-sm-12">
+                                    <textarea id="claim-description" class="form-control" placeholder="Nhập mô tả chi tiết về yêu cầu bồi thường..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layout3">
+                        <h6 class="mb-3">Danh sách tài liệu liên quan</h6>
+                        <div class="table-responsive text-nowrap">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Tên file</th>
+                                    <th>Loại file</th>
+                                    <th>Ngày tải lên</th>
+                                    <th>Hành động</th>
+                                </tr>
+                                </thead>
+                                <tbody id="document-list">
+                                <tr>
+                                    <td>document1.pdf</td>
+                                    <td>PDF</td>
+                                    <td>2024-07-19</td>
+                                    <td><button class="btn btn-sm btn-info view-btn" data-file="/path/to/document1.pdf">Xem</button></td>
+                                </tr>
+                                <tr>
+                                    <td>image1.jpg</td>
+                                    <td>Image</td>
+                                    <td>2024-07-19</td>
+                                    <td><button class="btn btn-sm btn-info view-btn" data-file="/path/to/image1.jpg">Xem</button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <nav aria-label="Page navigation" style="margin-top: 2%; padding-right: 2%;">
+                                <ul id="pagination" class="pagination"></ul>
+                            </nav>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0; }
+
+a, a:link, a:visited {
+  color: #23459d;
+  text-decoration: none; }
+  a:hover, a:focus, a:link:hover, a:link:focus, a:visited:hover, a:visited:focus {
+    text-decoration: underline; }
+
+body {
+  text-align: center;
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
+  line-height: 25px; }
+  body:before {
+    content: '';
+    position: absolute;
+    top: calc(50% - 50vh);
+    left: calc(50% - 1500px);
+    background-color: #23459d;
+    width: 1040px;
+    height: 100vh;
+    min-height: 640px;
+    transform: skewX(-15deg); }
+
+main {
+  padding: 0 30px;
+  margin: 0 auto;
+  text-align: left; }
+  @media screen and (max-width: 419px) {
+    main {
+      width: 100%; } }
+  @media screen and (min-width: 420px) {
+    main {
+      width: 420px; } }
+  @media screen and (max-height: 709px) {
+    main {
+      margin-top: 100px; } }
+  @media screen and (min-height: 710px) {
+    main {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); } }
+  main #logo-netq {
+    width: auto;
+    height: 50px;
+    display: block;
+    max-width: 100%; }
+  main form {
+    margin: 50px 0 100px; }
+    main form label {
+      display: block;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 20px;
+      text-transform: uppercase;
+      color: #36424A;
+      margin-bottom: 8px; }
+    main form input[type="text"],
+    main form input[type="password"] {
+      width: 100%;
+      background-image: linear-gradient(-180deg, #FFF 0%, #ECF1F5 100%);
+      border: 1px solid #B5BDC9;
+      border-radius: 2px;
+      padding: 10px 15px;
+      margin-bottom: 25px;
+      transition: 0.4s border-color;
+      /* font styles */
+      font-family: 'Muli', sans-serif;
+      font-weight: 200;
+      font-size: 16px;
+      line-height: 25px;
+      color: #5F6A72; }
+      main form input[type="text"]:hover, main form input[type="text"]:focus,
+      main form input[type="password"]:hover,
+      main form input[type="password"]:focus {
+        outline: 0;
+        border-color: #23459d;
+        color: #23459d; }
+    main form input[type="submit"] {
+      background-color: #23459d;
+      border: 0;
+      border-radius: 2px;
+      padding: 5px 20px 7px;
+      margin-top: 25px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 25px;
+      color: #FFF;
+      transition: 0.4s background-color; }
+      main form input[type="submit"]:hover {
+        cursor: pointer;
+        background-color: #1a3373; }
+      main form input[type="submit"]:focus {
+        outline: none; }
+  main .copyright {
+    text-align: left;
+    width: 100%;
+    font-family: 'Muli', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+    color: #36424A;
+    letter-spacing: -0.25px; }
+    @media screen and (max-height: 709px) {
+      main .copyright {
+        margin-bottom: 25px; } }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 8px 0 0 0;
+  padding: 5px 0;
+  text-align: center; }
+  footer h4 {
+    font-size: 18px; }
+  footer .footer {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  footer li {
+    display: inline;
+    margin: 0 30px; }
+  footer li a {
+    font-size: 15px; }
+  footer li i {
+    font-size: 16px; }
+  footer a.link {
+    color: #007abc;
+    position: relative;
+    text-decoration: none;
+    transition: color .4s ease-out; }
+
+a.forget-password {
+  color: #007abc !important;
+  margin-left: 10px; }
+  a.forget-password:link {
+    text-decoration: none; }
+  a.forget-password:visited {
+    text-decoration: none; }
+  a.forget-password:hover {
+    text-decoration: underline !important;
+    cursor: pointer; }
+  a.forget-password:active {
+    text-decoration: underline !important; }
+
+/*# sourceMappingURL=../../../../../../target/login.css.map */
