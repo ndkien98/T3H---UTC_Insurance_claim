@@ -17,6 +17,6 @@ public class ClaimManagerController {
 
     @GetMapping("claim/{id}")
     public String claim(@PathVariable int id) {
-        return "admin/claim/detail-claim";
+        return "admin/claim/claim-detail";
     }
 }
