@@ -1,7 +1,7 @@
 package com.t3h.insuranceclaim.service.impl;
 
 import com.t3h.insuranceclaim.dto.CustomerDTO;
-import com.t3h.insuranceclaim.entity.Customer;
+import com.t3h.insuranceclaim.entity.CustomerEntity;
 import com.t3h.insuranceclaim.mapper.CustomerMapper;
 import com.t3h.insuranceclaim.repository.CustomerRepository;
 import com.t3h.insuranceclaim.service.CustomerService;
@@ -29,25 +29,25 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDTO getById(Long id) {
-        Customer customer = customerRepository.findById(id)
+        CustomerEntity customerEntity = customerRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Customer not found"));
-        return customerMapper.toDTO(customer);
+        return customerMapper.toDTO(customerEntity);
     }
 
     @Override
     public CustomerDTO create(CustomerDTO customerDTO) {
-        Customer customer = customerMapper.toEntity(customerDTO);
-        customer = customerRepository.save(customer);
-        return customerMapper.toDTO(customer);
+        CustomerEntity customerEntity = customerMapper.toEntity(customerDTO);
+        customerEntity = customerRepository.save(customerEntity);
+        return customerMapper.toDTO(customerEntity);
     }
 
     @Override
     public CustomerDTO update(Long id, CustomerDTO customerDTO) {
-        Customer customer = customerRepository.findById(id)
+        CustomerEntity customerEntity = customerRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Customer not found"));
-        customer = customerMapper.toEntity(customerDTO);
-        customer = customerRepository.save(customer);
-        return customerMapper.toDTO(customer);
+        customerEntity = customerMapper.toEntity(customerDTO);
+        customerEntity = customerRepository.save(customerEntity);
+        return customerMapper.toDTO(customerEntity);
     }
 
     @Override

@@ -6,6 +6,6 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface ClaimStatusMapper {
-    ClaimStatusDTO toDTO(ClaimStatus claimstatus);
-    ClaimStatus toEntity(ClaimStatusDTO claimstatusDTO);
+    ClaimStatusDTO toDTO(ClaimStatusEntity claimstatus);
+    ClaimStatusEntity toEntity(ClaimStatusDTO claimstatusDTO);
 }

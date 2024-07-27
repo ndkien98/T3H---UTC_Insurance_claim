@@ -26,7 +26,7 @@
       <div class="content-wrapper">
         <div class="container-xxl flex-grow-1 container-p-y">
           <h4 class="fw-bold py-3 mb-4 d-flex justify-content-between align-items-center">
-            <span><span class="text-muted fw-light">Claim manager /</span> List claim</span>
+            <span><span class="text-muted fw-light">Claim manager /</span> List claimEntity</span>
             <div>
               <button class="btn btn-primary btn-sm"><i class="bx bx-check-circle me-1"></i> Đã tiếp nhận</button>
               <button class="btn btn-secondary btn-sm"><i class="bx bx-search-alt me-1"></i> Đã xác minh</button>
@@ -52,7 +52,7 @@
                 <tbody class="table-border-bottom-0">
                 <tr>
                   <td><input type="checkbox" class="recordCheckbox"></td>
-                  <td><a href="http://localhost:8080/admin/claim/1" style="text-decoration: none;"><strong>CL001</strong></td>
+                  <td><a href="http://localhost:8080/admin/claimEntity/1" style="text-decoration: none;"><strong>CL001</strong></td>
                   <td>Nguyễn Văn A</td>
                   <td>Bảo hiểm xe máy</td>
                   <td>2024-07-10</td>
@@ -61,7 +61,7 @@
                 </tr>
                 <tr>
                   <td><input type="checkbox" class="recordCheckbox"></td>
-                  <td><a href="http://localhost:8080/admin/claim/1" style="text-decoration: none;"><strong>CL002</strong></td>
+                  <td><a href="http://localhost:8080/admin/claimEntity/1" style="text-decoration: none;"><strong>CL002</strong></td>
                   <td>Trần Thị B</td>
                   <td>Bảo hiểm nhà cửa</td>
                   <td>2024-06-25</td>
@@ -70,7 +70,7 @@
                 </tr>
                 <tr>
                   <td><input type="checkbox" class="recordCheckbox"></td>
-                  <td><a href="http://localhost:8080/admin/claim/1" style="text-decoration: none;"><strong>CL003</strong></td>
+                  <td><a href="http://localhost:8080/admin/claimEntity/1" style="text-decoration: none;"><strong>CL003</strong></td>
                   <td>Lê Thị C</td>
                   <td>Bảo hiểm sức khỏe</td>
                   <td>2024-05-15</td>
@@ -79,7 +79,7 @@
                 </tr>
                 <tr>
                   <td><input type="checkbox" class="recordCheckbox"></td>
-                  <td><a href="http://localhost:8080/admin/claim/1" style="text-decoration: none;"><strong>CL004</strong></td>
+                  <td><a href="http://localhost:8080/admin/claimEntity/1" style="text-decoration: none;"><strong>CL004</strong></td>
                   <td>Phạm Văn D</td>
                   <td>Bảo hiểm du lịch</td>
                   <td>2024-04-20</td>
@@ -88,7 +88,7 @@
                 </tr>
                 <tr>
                   <td><input type="checkbox" class="recordCheckbox"></td>
-                  <td><a href="http://localhost:8080/admin/claim/1" style="text-decoration: none;"><strong>CL005</strong></td>
+                  <td><a href="http://localhost:8080/admin/claimEntity/1" style="text-decoration: none;"><strong>CL005</strong></td>
                   <td>Đỗ Thị E</td>
                   <td>Bảo hiểm nhân thọ</td>
                   <td>2024-03-10</td>
@@ -151,7 +151,7 @@
         tdElements.forEach(td => {
           // Bọc nội dung của td trong thẻ a
           const a = document.createElement('a');
-          a.href = 'detail-claim.html';
+          a.href = 'detail-claimEntity.html';
           a.textContent = td.textContent;
           td.textContent = '';
           td.appendChild(a);

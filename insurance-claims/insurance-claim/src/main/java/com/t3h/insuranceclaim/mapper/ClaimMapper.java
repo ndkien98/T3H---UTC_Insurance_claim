@@ -6,6 +6,6 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface ClaimMapper {
-    ClaimDTO toDTO(Claim claim);
-    Claim toEntity(ClaimDTO claimDTO);
+    ClaimDTO toDTO(ClaimEntity claimEntity);
+    ClaimEntity toEntity(ClaimDTO claimDTO);
 }

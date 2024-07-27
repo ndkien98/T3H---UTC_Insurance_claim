@@ -1,7 +1,7 @@
 package com.t3h.insuranceclaim.service.impl;
 
 import com.t3h.insuranceclaim.dto.ClaimStatusDTO;
-import com.t3h.insuranceclaim.entity.ClaimStatus;
+import com.t3h.insuranceclaim.entity.ClaimStatusEntity;
 import com.t3h.insuranceclaim.mapper.ClaimStatusMapper;
 import com.t3h.insuranceclaim.repository.ClaimStatusRepository;
 import com.t3h.insuranceclaim.service.ClaimStatusService;
@@ -29,21 +29,21 @@ public class ClaimStatusServiceImpl implements ClaimStatusService {
 
     @Override
     public ClaimStatusDTO getById(Long id) {
-        ClaimStatus claimstatus = claimstatusRepository.findById(id)
+        ClaimStatusEntity claimstatus = claimstatusRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("ClaimStatus not found"));
         return claimstatusMapper.toDTO(claimstatus);
     }
 
     @Override
     public ClaimStatusDTO create(ClaimStatusDTO claimstatusDTO) {
-        ClaimStatus claimstatus = claimstatusMapper.toEntity(claimstatusDTO);
+        ClaimStatusEntity claimstatus = claimstatusMapper.toEntity(claimstatusDTO);
         claimstatus = claimstatusRepository.save(claimstatus);
         return claimstatusMapper.toDTO(claimstatus);
     }
 
     @Override
     public ClaimStatusDTO update(Long id, ClaimStatusDTO claimstatusDTO) {
-        ClaimStatus claimstatus = claimstatusRepository.findById(id)
+        ClaimStatusEntity claimstatus = claimstatusRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("ClaimStatus not found"));
         claimstatus = claimstatusMapper.toEntity(claimstatusDTO);
         claimstatus = claimstatusRepository.save(claimstatus);

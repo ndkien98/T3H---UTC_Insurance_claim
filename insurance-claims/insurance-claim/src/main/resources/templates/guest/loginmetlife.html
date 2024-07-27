@@ -13,11 +13,11 @@
     <!-- Logo -->
     <img src="./loginmetlife/bidv_metlife2.png" alt="Cumulus NetQ" id="logo-netq">
     <!-- Form -->
-    <form action="http://localhost:8080/admin" method="POST" autocomplete="off">
+    <form th:action="@{/perform_login}" method="POST" autocomplete="off">
         <label for="username">Tên đăng nhập</label>
-        <input type="text" name="username" id="username">
+        <input type="text" id="username" name="username">
         <label for="password">Mật khẩu</label>
-        <input type="password" name="password" id="password" autocomplete="off">
+        <input type="password" id="password" name="password" autocomplete="off">
 
         <input type="hidden" name="continueURL" id="continueURL"
                value="https://api.bidvmetlife.com.vn/sso-server/oauth/authorize?client_id=chart&amp;redirect_uri=https%3A%2F%2Fsales.bidvmetlife.com.vn%2Fhome%2Fauthorize&amp;response_type=code&amp;scope=user_info">

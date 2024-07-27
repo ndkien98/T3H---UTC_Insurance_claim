@@ -1,7 +1,7 @@
 package com.t3h.insuranceclaim.service.impl;
 
 import com.t3h.insuranceclaim.dto.ClaimDTO;
-import com.t3h.insuranceclaim.entity.Claim;
+import com.t3h.insuranceclaim.entity.ClaimEntity;
 import com.t3h.insuranceclaim.mapper.ClaimMapper;
 import com.t3h.insuranceclaim.repository.ClaimRepository;
 import com.t3h.insuranceclaim.service.ClaimService;
@@ -29,25 +29,25 @@ public class ClaimServiceImpl implements ClaimService {
 
     @Override
     public ClaimDTO getById(Long id) {
-        Claim claim = claimRepository.findById(id)
+        ClaimEntity claimEntity = claimRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Claim not found"));
-        return claimMapper.toDTO(claim);
+        return claimMapper.toDTO(claimEntity);
     }
 
     @Override
     public ClaimDTO create(ClaimDTO claimDTO) {
-        Claim claim = claimMapper.toEntity(claimDTO);
-        claim = claimRepository.save(claim);
-        return claimMapper.toDTO(claim);
+        ClaimEntity claimEntity = claimMapper.toEntity(claimDTO);
+        claimEntity = claimRepository.save(claimEntity);
+        return claimMapper.toDTO(claimEntity);
     }
 
     @Override
     public ClaimDTO update(Long id, ClaimDTO claimDTO) {
-        Claim claim = claimRepository.findById(id)
+        ClaimEntity claimEntity = claimRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Claim not found"));
-        claim = claimMapper.toEntity(claimDTO);
-        claim = claimRepository.save(claim);
-        return claimMapper.toDTO(claim);
+        claimEntity = claimMapper.toEntity(claimDTO);
+        claimEntity = claimRepository.save(claimEntity);
+        return claimMapper.toDTO(claimEntity);
     }
 
     @Override
