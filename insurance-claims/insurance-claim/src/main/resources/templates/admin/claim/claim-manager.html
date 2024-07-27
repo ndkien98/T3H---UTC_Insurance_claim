@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template-free">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum=1.0" />
+  <title>Claim Manager - BIDV MetLife</title>
+  <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+  <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="../assets/css/demo.css" />
+  <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+  <script src="../assets/vendor/js/helpers.js"></script>
+  <script src="../assets/js/config.js"></script>
+</head>
+<body>
+<div class="layout-wrapper layout-content-navbar">
+  <div class="layout-container">
+
+    <div th:include="admin/common/sidebar::sidebar"></div>
+    <div class="layout-page">
+      <div th:include="admin/common/header::header"></div>
+      <div class="content-wrapper">
+        <div class="container-xxl flex-grow-1 container-p-y">
+          <h4 class="fw-bold py-3 mb-4 d-flex justify-content-between align-items-center">
+            <span><span class="text-muted fw-light">Claim manager /</span> List claim</span>
+            <div>
+              <button class="btn btn-primary btn-sm"><i class="bx bx-check-circle me-1"></i> Đã tiếp nhận</button>
+              <button class="btn btn-secondary btn-sm"><i class="bx bx-search-alt me-1"></i> Đã xác minh</button>
+              <button class="btn btn-success btn-sm"><i class="bx bx-task me-1"></i> Hoàn tất quy trình</button>
+              <button class="btn btn-info btn-sm"><i class="bx bx-like me-1"></i> Chấp nhận</button>
+              <button class="btn btn-danger btn-sm"><i class="bx bx-x-circle me-1"></i> Từ chối</button>
+            </div>
+          </h4>
+          <div class="card">
+            <div class="table-responsive text-nowrap">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th><input type="checkbox" id="selectAll"></th>
+                  <th>Mã yêu cầu bồi thường</th>
+                  <th>Tên khách hàng</th>
+                  <th>Tên sản phẩm bảo hiểm</th>
+                  <th>Ngày gửi yêu cầu</th>
+                  <th>Mô tả yêu cầu</th>
+                  <th>Trạng thái yêu cầu</th>
+                </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                <tr>
+                  <td><input type="checkbox" class="recordCheckbox"></td>
+                  <td><a href="http://localhost:8080/admin/claim/1" style="text-decoration: none;"><strong>CL001</strong></td>
+                  <td>Nguyễn Văn A</td>
+                  <td>Bảo hiểm xe máy</td>
+                  <td>2024-07-10</td>
+                  <td>Hư hỏng phần đầu xe do tai nạn</td>
+                  <td><span class="badge bg-label-primary me-1">Đang xử lý</span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="recordCheckbox"></td>
+                  <td><a href="http://localhost:8080/admin/claim/1" style="text-decoration: none;"><strong>CL002</strong></td>
+                  <td>Trần Thị B</td>
+                  <td>Bảo hiểm nhà cửa</td>
+                  <td>2024-06-25</td>
+                  <td>Thiệt hại do cháy</td>
+                  <td><span class="badge bg-label-success me-1">Hoàn thành</span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="recordCheckbox"></td>
+                  <td><a href="http://localhost:8080/admin/claim/1" style="text-decoration: none;"><strong>CL003</strong></td>
+                  <td>Lê Thị C</td>
+                  <td>Bảo hiểm sức khỏe</td>
+                  <td>2024-05-15</td>
+                  <td>Chi phí khám bệnh</td>
+                  <td><span class="badge bg-label-info me-1">Đã lên lịch</span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="recordCheckbox"></td>
+                  <td><a href="http://localhost:8080/admin/claim/1" style="text-decoration: none;"><strong>CL004</strong></td>
+                  <td>Phạm Văn D</td>
+                  <td>Bảo hiểm du lịch</td>
+                  <td>2024-04-20</td>
+                  <td>Hủy chuyến đi do dịch bệnh</td>
+                  <td><span class="badge bg-label-warning me-1">Đang chờ</span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="recordCheckbox"></td>
+                  <td><a href="http://localhost:8080/admin/claim/1" style="text-decoration: none;"><strong>CL005</strong></td>
+                  <td>Đỗ Thị E</td>
+                  <td>Bảo hiểm nhân thọ</td>
+                  <td>2024-03-10</td>
+                  <td>Chi phí điều trị bệnh hiểm nghèo</td>
+                  <td><span class="badge bg-label-danger me-1">Bị từ chối</span></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="d-flex justify-content-end">
+              <nav aria-label="Page navigation" style="
+    margin-top: 2%;
+    padding-right: 2%;
+">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div th:include="admin/common/footer::footer"></div>
+        <div class="content-backdrop fade"></div>
+      </div>
+    </div>
+    <div class="layout-overlay layout-menu-toggle"></div>
+  </div>
+</div>
+<script src="../assets/vendor/libs/jquery/jquery.js"></script>
+<script src="../assets/vendor/libs/popper/popper.js"></script>
+<script src="../assets/vendor/js/bootstrap.js"></script>
+<script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="../assets/vendor/js/menu.js"></script>
+<script src="../assets/js/main.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Lấy tất cả các thẻ th có nội dung là "Mã yêu cầu bồi thường"
+    const thElements = document.querySelectorAll('th');
+
+    thElements.forEach(th => {
+      if (th.textContent.trim() === 'Mã yêu cầu bồi thường') {
+        // Lấy tất cả các td trong cùng cột với th này
+        const thIndex = Array.from(th.parentNode.children).indexOf(th);
+        const tdElements = document.querySelectorAll('tbody tr td:nth-child(' + (thIndex + 1) + ')');
+
+        tdElements.forEach(td => {
+          // Bọc nội dung của td trong thẻ a
+          const a = document.createElement('a');
+          a.href = 'detail-claim.html';
+          a.textContent = td.textContent;
+          td.textContent = '';
+          td.appendChild(a);
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

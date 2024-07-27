@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Fira Sans Extra Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Fira Sans Extra Condensed Regular'), local('FiraSansExtraCondensed-Regular'), url('./fonts/FiraSansExtraCondensed/FiraSansExtraCondensed-Regular.ttf') format('ttf');
+    unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+/* vietnamese */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(./fonts/Montserrat/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Montserrat Bold'), local('Montserrat-Bold'), url(./fonts/Montserrat/JTURjIg1_i6t8kCHKm45_dJE3gbD_vx3rCubqg.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Montserrat Black'), local('Montserrat-Black'), url(./fonts/Montserrat/JTURjIg1_i6t8kCHKm45_epG3gbD_vx3rCubqg.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Play Regular'), local('Play-Regular'), url(./fonts/Play/6aez4K2oVqwIvto2H70Q13HqPA.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Muli Regular'), local('Muli-Regular'), url(./fonts/Muli/7Auwp_0qiz-afT3GLQjUwkQ1OQ.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+/* vietnamese */
+@font-face {
+    font-family: 'Saira';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Saira Regular'), local('Saira-Regular'), url(./fonts/Saira/memwYa2wxmKQyNkoTZM_ULUebck.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
