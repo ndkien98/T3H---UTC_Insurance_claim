@@ -34,8 +34,5 @@ public class Claim {
     private LocalDateTime lastModifiedDate;
     private String lastModifiedBy;
     private Boolean deleted;
-
     // Getters and Setters
-
-
 }
