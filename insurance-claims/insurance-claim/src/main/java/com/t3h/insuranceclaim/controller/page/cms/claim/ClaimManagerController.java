@@ -1,4 +1,4 @@
-package com.t3h.insuranceclaim.controller.page.admin.claim;
+package com.t3h.insuranceclaim.controller.page.cms.claim;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,11 +12,11 @@ public class ClaimManagerController {
 
     @GetMapping("claim-manager")
     public String claimManager() {
-        return "admin/claim/claim-manager";
+        return "cms/claim/claim-manager";
     }
 
     @GetMapping("claim/{id}")
     public String claim(@PathVariable int id) {
-        return "admin/claim/claim-detail";
+        return "cms/claim/claim-detail";
     }
 }

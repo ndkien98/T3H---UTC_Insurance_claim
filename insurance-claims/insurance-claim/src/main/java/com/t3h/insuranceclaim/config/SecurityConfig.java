@@ -25,12 +25,13 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/admin/**").hasRole(SecurityUtils.Role.ADMIN.name())
+                        .requestMatchers("/cms/**").hasRole(SecurityUtils.Role.ADMIN.name())
                         .requestMatchers("/user/**").hasAnyRole(SecurityUtils.Role.USER.name(),SecurityUtils.Role.ADMIN.name())
                         .requestMatchers("/", "/home", "/login",
                                 "/assets/**", "/fonts/**", "/homeguest_files/**",
                                 "/js/**", "/libs/**", "/loginmetlife/**",
                                 "/page404/**", "/scss/**", "/tasks/**", "/css/**", "/images/**").permitAll()
+                        .requestMatchers("/resource/user/**").hasAnyRole(SecurityUtils.Role.USER.name(),SecurityUtils.Role.ADMIN.name())
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form

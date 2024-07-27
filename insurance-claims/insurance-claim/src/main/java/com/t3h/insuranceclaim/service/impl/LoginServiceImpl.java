@@ -26,7 +26,7 @@ public class LoginServiceImpl implements LoginService {
         List<String> roles = SecurityUtils.getCurrentUserRoles();
         boolean isAdmin = roles.contains(SecurityUtils.PREFIX_ROLE + SecurityUtils.Role.ADMIN.name());
         if (isAdmin){
-            return "redirect:/admin/dashboard";
+            return "redirect:/cms/dashboard";
         }
         return "redirect:/user/profile";
     }

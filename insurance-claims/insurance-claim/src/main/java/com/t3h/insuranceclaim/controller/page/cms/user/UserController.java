@@ -1,8 +1,6 @@
-package com.t3h.insuranceclaim.controller.page.admin.user;
+package com.t3h.insuranceclaim.controller.page.cms.user;
 
 import com.t3h.insuranceclaim.dto.UserDTO;
-import com.t3h.insuranceclaim.entity.UserEntity;
-import com.t3h.insuranceclaim.security.SecurityUtils;
 import com.t3h.insuranceclaim.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +19,6 @@ public class UserController {
     public String profile(Model model) {
         UserDTO userDTO = userService.getProfileUser();
         model.addAttribute("userDto", userDTO);
-        return "user/profile";
+        return "cms/user/profile";
     }
 }
