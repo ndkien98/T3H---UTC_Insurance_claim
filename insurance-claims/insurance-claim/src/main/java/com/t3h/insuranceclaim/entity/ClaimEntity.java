@@ -10,11 +10,13 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Entity(name = "claim")
+@Entity
+@Table(name = "claim")
 @Getter
 @Setter
 public class ClaimEntity extends BaseEntity {
 
+    private String code;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
@@ -30,7 +32,7 @@ public class ClaimEntity extends BaseEntity {
 
     private LocalDate claimDate;
     private String description;
-    private double amount;
+    private Double amount;
 
     public ClaimEntity() {
 

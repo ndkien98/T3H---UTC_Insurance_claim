@@ -9,12 +9,14 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Entity(name = "claim_status")
+@Entity
+@Table(name = "claim_status")
 @Getter
 @Setter
 public class ClaimStatusEntity extends BaseEntity {
 
-    private String status;
+    private String code;
+    private String description;
 
 
     public ClaimStatusEntity() {

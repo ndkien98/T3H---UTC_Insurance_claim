@@ -1,8 +1,12 @@
 package com.t3h.insuranceclaim.controller.resource;
 
 import com.t3h.insuranceclaim.dto.ClaimDTO;
+import com.t3h.insuranceclaim.dto.request.ClaimRequest;
+import com.t3h.insuranceclaim.dto.response.ResponsePage;
 import com.t3h.insuranceclaim.service.ClaimService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,8 +19,9 @@ public class ClaimController {
     private ClaimService claimService;
 
     @GetMapping
-    public List<ClaimDTO> getAll() {
-        return claimService.getAll();
+    public ResponseEntity<ResponsePage<List<ClaimDTO>>> getAll(@RequestBody(required = false) ClaimRequest claimRequest, Pageable pageable) {
+        ResponsePage<List<ClaimDTO>> responsePage = claimService.getAllClaims(claimRequest,pageable);
+        return ResponseEntity.ok(responsePage);
     }
 
     @GetMapping("/id")

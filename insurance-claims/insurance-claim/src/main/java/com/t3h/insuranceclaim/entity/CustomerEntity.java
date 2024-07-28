@@ -8,7 +8,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity(name = "customer")
+@Entity
+@Table(name = "customer")
 @Getter
 @Setter
 public class CustomerEntity extends BaseEntity {

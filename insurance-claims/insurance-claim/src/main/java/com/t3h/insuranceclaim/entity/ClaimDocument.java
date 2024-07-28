@@ -10,7 +10,8 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Entity(name = "claim_document")
+@Entity
+@Table(name = "claim_document")
 @Getter
 @Setter
 public class ClaimDocument extends BaseEntity {

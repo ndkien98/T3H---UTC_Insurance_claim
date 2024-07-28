@@ -32,6 +32,7 @@ public class SecurityConfig {
                                 "/js/**", "/libs/**", "/loginmetlife/**",
                                 "/page404/**", "/scss/**", "/tasks/**", "/css/**", "/images/**").permitAll()
                         .requestMatchers("/resource/user/**").hasAnyRole(SecurityUtils.Role.USER.name(),SecurityUtils.Role.ADMIN.name())
+//                        .requestMatchers("/api/**").hasAnyRole()
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form

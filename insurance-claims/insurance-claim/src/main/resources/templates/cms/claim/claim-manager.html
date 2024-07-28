@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
   <script src="../assets/vendor/js/helpers.js"></script>
   <script src="../assets/js/config.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <div class="layout-wrapper layout-content-navbar">
@@ -35,6 +36,37 @@
               <button class="btn btn-danger btn-sm"><i class="bx bx-x-circle me-1"></i> Từ chối</button>
             </div>
           </h4>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label for="search-ma-yeu-cau">Mã yêu cầu bồi thường</label>
+              <input type="text" id="search-ma-yeu-cau" class="form-control"
+                     placeholder="Nhập mã yêu cầu">
+            </div>
+            <div class="col-md-3">
+              <label for="from-date">Từ ngày</label>
+              <input type="date" id="from-date" class="form-control">
+            </div>
+            <div class="col-md-3">
+              <label for="to-date">Đến ngày</label>
+              <input type="date" id="to-date" class="form-control">
+            </div>
+            <div class="col-md-3">
+              <label for="trang-thai-yeu-cau">Trạng thái yêu cầu</label>
+              <select id="trang-thai-yeu-cau" class="form-control">
+                <option value="">Tất cả trạng thái</option>
+                <option value="Đang xử lý">Đang xử lý</option>
+                <option value="Hoàn thành">Hoàn thành</option>
+                <option value="Đã lên lịch">Đã lên lịch</option>
+                <option value="Đang chờ">Đang chờ</option>
+                <option value="Bị từ chối">Bị từ chối</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-12 text-right">
+              <button id="search-button" class="btn btn-primary">Tìm kiếm</button>
+            </div>
+          </div>
           <div class="card">
             <div class="table-responsive text-nowrap">
               <table class="table">
@@ -136,9 +168,10 @@
 <script src="../assets/vendor/js/menu.js"></script>
 <script src="../assets/js/main.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="../cms/js/claim-manager.js"></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     // Lấy tất cả các thẻ th có nội dung là "Mã yêu cầu bồi thường"
     const thElements = document.querySelectorAll('th');
 
@@ -151,13 +184,48 @@
         tdElements.forEach(td => {
           // Bọc nội dung của td trong thẻ a
           const a = document.createElement('a');
-          a.href = 'detail-claimEntity.html';
+          a.href = 'detail-claim.html';
           a.textContent = td.textContent;
           td.textContent = '';
           td.appendChild(a);
         });
       }
     });
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Lấy các ô input và dropdown
+    const searchMaYeuCau = document.getElementById('search-ma-yeu-cau');
+    const fromDate = document.getElementById('from-date');
+    const toDate = document.getElementById('to-date');
+    const trangThaiYeuCau = document.getElementById('trang-thai-yeu-cau');
+    const searchButton = document.getElementById('search-button');
+
+    // Hàm lọc dữ liệu
+    function filterTable() {
+      const maYeuCauValue = searchMaYeuCau.value.toLowerCase();
+      const fromDateValue = fromDate.value;
+      const toDateValue = toDate.value;
+      const trangThaiValue = trangThaiYeuCau.value;
+
+      const rows = document.querySelectorAll('tbody tr');
+      rows.forEach(row => {
+        const maYeuCau = row.cells[1].textContent.toLowerCase();
+        const ngayGuiYeuCau = row.cells[4].textContent;
+        const trangThai = row.cells[6].textContent;
+
+        const showRow =
+                (maYeuCau.includes(maYeuCauValue)) &&
+                (!fromDateValue || new Date(ngayGuiYeuCau) >= new Date(fromDateValue)) &&
+                (!toDateValue || new Date(ngayGuiYeuCau) <= new Date(toDateValue)) &&
+                (!trangThaiValue || trangThai === trangThaiValue);
+
+        row.style.display = showRow ? '' : 'none';
+      });
+    }
+
+    // Thêm sự kiện lắng nghe nút tìm kiếm
+    searchButton.addEventListener('click', filterTable);
   });
 </script>
 

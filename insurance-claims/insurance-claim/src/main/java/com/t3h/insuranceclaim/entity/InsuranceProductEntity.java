@@ -7,7 +7,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity(name = "insurance_product")
+@Entity
+@Table(name = "insurance_product")
 @Getter
 @Setter
 public class InsuranceProductEntity extends BaseEntity {

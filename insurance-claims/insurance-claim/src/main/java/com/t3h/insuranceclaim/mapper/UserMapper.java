@@ -10,6 +10,7 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 @DecoratedWith(UserMapperDecorator.class)
 public interface UserMapper {
+
     UserDTO toDto(UserEntity userEntity);
     UserEntity toEntity(UserDTO userDTO);
 }
