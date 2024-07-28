@@ -3,11 +3,16 @@ package com.t3h.insuranceclaim.config;
 import com.t3h.insuranceclaim.security.SecurityUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -23,7 +28,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
+        http .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/cms/**").hasRole(SecurityUtils.Role.ADMIN.name())
                         .requestMatchers("/user/**").hasAnyRole(SecurityUtils.Role.USER.name(),SecurityUtils.Role.ADMIN.name())
@@ -32,7 +37,7 @@ public class SecurityConfig {
                                 "/js/**", "/libs/**", "/loginmetlife/**",
                                 "/page404/**", "/scss/**", "/tasks/**", "/css/**", "/images/**").permitAll()
                         .requestMatchers("/resource/user/**").hasAnyRole(SecurityUtils.Role.USER.name(),SecurityUtils.Role.ADMIN.name())
-//                        .requestMatchers("/api/**").hasAnyRole()
+                        .requestMatchers("/api/**").permitAll() // Permit all cho tất cả các endpoint bắt đầu bằng /api
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
@@ -48,6 +53,9 @@ public class SecurityConfig {
 
         return http.build();
     }
+
+
+
 
     @Bean
     public PasswordEncoder passwordEncoder() {

@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/claimdocuments")
-public class ClaimDocumentController {
+public class ClaimDocumentResourceController {
 
     @Autowired
     private ClaimDocumentService claimdocumentService;

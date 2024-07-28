@@ -39,8 +39,7 @@
           <div class="row mb-3">
             <div class="col-md-3">
               <label for="search-ma-yeu-cau">Mã yêu cầu bồi thường</label>
-              <input type="text" id="search-ma-yeu-cau" class="form-control"
-                     placeholder="Nhập mã yêu cầu">
+              <input type="text" id="search-ma-yeu-cau" class="form-control" placeholder="Nhập mã yêu cầu">
             </div>
             <div class="col-md-3">
               <label for="from-date">Từ ngày</label>
@@ -69,7 +68,7 @@
           </div>
           <div class="card">
             <div class="table-responsive text-nowrap">
-              <table class="table">
+              <table class="table" id="claims-table">
                 <thead>
                 <tr>
                   <th><input type="checkbox" id="selectAll"></th>
@@ -81,78 +80,18 @@
                   <th>Trạng thái yêu cầu</th>
                 </tr>
                 </thead>
-                <tbody class="table-border-bottom-0">
-                <tr>
-                  <td><input type="checkbox" class="recordCheckbox"></td>
-                  <td><a href="http://localhost:8080/admin/claimEntity/1" style="text-decoration: none;"><strong>CL001</strong></td>
-                  <td>Nguyễn Văn A</td>
-                  <td>Bảo hiểm xe máy</td>
-                  <td>2024-07-10</td>
-                  <td>Hư hỏng phần đầu xe do tai nạn</td>
-                  <td><span class="badge bg-label-primary me-1">Đang xử lý</span></td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" class="recordCheckbox"></td>
-                  <td><a href="http://localhost:8080/admin/claimEntity/1" style="text-decoration: none;"><strong>CL002</strong></td>
-                  <td>Trần Thị B</td>
-                  <td>Bảo hiểm nhà cửa</td>
-                  <td>2024-06-25</td>
-                  <td>Thiệt hại do cháy</td>
-                  <td><span class="badge bg-label-success me-1">Hoàn thành</span></td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" class="recordCheckbox"></td>
-                  <td><a href="http://localhost:8080/admin/claimEntity/1" style="text-decoration: none;"><strong>CL003</strong></td>
-                  <td>Lê Thị C</td>
-                  <td>Bảo hiểm sức khỏe</td>
-                  <td>2024-05-15</td>
-                  <td>Chi phí khám bệnh</td>
-                  <td><span class="badge bg-label-info me-1">Đã lên lịch</span></td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" class="recordCheckbox"></td>
-                  <td><a href="http://localhost:8080/admin/claimEntity/1" style="text-decoration: none;"><strong>CL004</strong></td>
-                  <td>Phạm Văn D</td>
-                  <td>Bảo hiểm du lịch</td>
-                  <td>2024-04-20</td>
-                  <td>Hủy chuyến đi do dịch bệnh</td>
-                  <td><span class="badge bg-label-warning me-1">Đang chờ</span></td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" class="recordCheckbox"></td>
-                  <td><a href="http://localhost:8080/admin/claimEntity/1" style="text-decoration: none;"><strong>CL005</strong></td>
-                  <td>Đỗ Thị E</td>
-                  <td>Bảo hiểm nhân thọ</td>
-                  <td>2024-03-10</td>
-                  <td>Chi phí điều trị bệnh hiểm nghèo</td>
-                  <td><span class="badge bg-label-danger me-1">Bị từ chối</span></td>
-                </tr>
-                </tbody>
+                <tbody class="table-border-bottom-0"></tbody>
               </table>
             </div>
             <div class="d-flex justify-content-end">
-              <nav aria-label="Page navigation" style="
-    margin-top: 2%;
-    padding-right: 2%;
-">
-                <ul class="pagination">
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
+              <nav aria-label="Page navigation" style="margin-top: 2%; padding-right: 2%;">
+                <ul class="pagination" id="pagination">
+                  <!-- Pagination will be dynamically generated -->
                 </ul>
               </nav>
             </div>
           </div>
+
         </div>
         <div th:include="cms/common/footer::footer"></div>
         <div class="content-backdrop fade"></div>
@@ -170,64 +109,64 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script src="../cms/js/claim-manager.js"></script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Lấy tất cả các thẻ th có nội dung là "Mã yêu cầu bồi thường"
-    const thElements = document.querySelectorAll('th');
+<!--<script>-->
+<!--  document.addEventListener('DOMContentLoaded', function () {-->
+<!--    // Lấy tất cả các thẻ th có nội dung là "Mã yêu cầu bồi thường"-->
+<!--    const thElements = document.querySelectorAll('th');-->
 
-    thElements.forEach(th => {
-      if (th.textContent.trim() === 'Mã yêu cầu bồi thường') {
-        // Lấy tất cả các td trong cùng cột với th này
-        const thIndex = Array.from(th.parentNode.children).indexOf(th);
-        const tdElements = document.querySelectorAll('tbody tr td:nth-child(' + (thIndex + 1) + ')');
+<!--    thElements.forEach(th => {-->
+<!--      if (th.textContent.trim() === 'Mã yêu cầu bồi thường') {-->
+<!--        // Lấy tất cả các td trong cùng cột với th này-->
+<!--        const thIndex = Array.from(th.parentNode.children).indexOf(th);-->
+<!--        const tdElements = document.querySelectorAll('tbody tr td:nth-child(' + (thIndex + 1) + ')');-->
 
-        tdElements.forEach(td => {
-          // Bọc nội dung của td trong thẻ a
-          const a = document.createElement('a');
-          a.href = 'detail-claim.html';
-          a.textContent = td.textContent;
-          td.textContent = '';
-          td.appendChild(a);
-        });
-      }
-    });
-  });
+<!--        tdElements.forEach(td => {-->
+<!--          // Bọc nội dung của td trong thẻ a-->
+<!--          const a = document.createElement('a');-->
+<!--          a.href = 'detail-claim.html';-->
+<!--          a.textContent = td.textContent;-->
+<!--          td.textContent = '';-->
+<!--          td.appendChild(a);-->
+<!--        });-->
+<!--      }-->
+<!--    });-->
+<!--  });-->
 
-  document.addEventListener('DOMContentLoaded', function () {
-    // Lấy các ô input và dropdown
-    const searchMaYeuCau = document.getElementById('search-ma-yeu-cau');
-    const fromDate = document.getElementById('from-date');
-    const toDate = document.getElementById('to-date');
-    const trangThaiYeuCau = document.getElementById('trang-thai-yeu-cau');
-    const searchButton = document.getElementById('search-button');
+<!--  document.addEventListener('DOMContentLoaded', function () {-->
+<!--    // Lấy các ô input và dropdown-->
+<!--    const searchMaYeuCau = document.getElementById('search-ma-yeu-cau');-->
+<!--    const fromDate = document.getElementById('from-date');-->
+<!--    const toDate = document.getElementById('to-date');-->
+<!--    const trangThaiYeuCau = document.getElementById('trang-thai-yeu-cau');-->
+<!--    const searchButton = document.getElementById('search-button');-->
 
-    // Hàm lọc dữ liệu
-    function filterTable() {
-      const maYeuCauValue = searchMaYeuCau.value.toLowerCase();
-      const fromDateValue = fromDate.value;
-      const toDateValue = toDate.value;
-      const trangThaiValue = trangThaiYeuCau.value;
+<!--    // Hàm lọc dữ liệu-->
+<!--    function filterTable() {-->
+<!--      const maYeuCauValue = searchMaYeuCau.value.toLowerCase();-->
+<!--      const fromDateValue = fromDate.value;-->
+<!--      const toDateValue = toDate.value;-->
+<!--      const trangThaiValue = trangThaiYeuCau.value;-->
 
-      const rows = document.querySelectorAll('tbody tr');
-      rows.forEach(row => {
-        const maYeuCau = row.cells[1].textContent.toLowerCase();
-        const ngayGuiYeuCau = row.cells[4].textContent;
-        const trangThai = row.cells[6].textContent;
+<!--      const rows = document.querySelectorAll('tbody tr');-->
+<!--      rows.forEach(row => {-->
+<!--        const maYeuCau = row.cells[1].textContent.toLowerCase();-->
+<!--        const ngayGuiYeuCau = row.cells[4].textContent;-->
+<!--        const trangThai = row.cells[6].textContent;-->
 
-        const showRow =
-                (maYeuCau.includes(maYeuCauValue)) &&
-                (!fromDateValue || new Date(ngayGuiYeuCau) >= new Date(fromDateValue)) &&
-                (!toDateValue || new Date(ngayGuiYeuCau) <= new Date(toDateValue)) &&
-                (!trangThaiValue || trangThai === trangThaiValue);
+<!--        const showRow =-->
+<!--                (maYeuCau.includes(maYeuCauValue)) &&-->
+<!--                (!fromDateValue || new Date(ngayGuiYeuCau) >= new Date(fromDateValue)) &&-->
+<!--                (!toDateValue || new Date(ngayGuiYeuCau) <= new Date(toDateValue)) &&-->
+<!--                (!trangThaiValue || trangThai === trangThaiValue);-->
 
-        row.style.display = showRow ? '' : 'none';
-      });
-    }
+<!--        row.style.display = showRow ? '' : 'none';-->
+<!--      });-->
+<!--    }-->
 
-    // Thêm sự kiện lắng nghe nút tìm kiếm
-    searchButton.addEventListener('click', filterTable);
-  });
-</script>
+<!--    // Thêm sự kiện lắng nghe nút tìm kiếm-->
+<!--    searchButton.addEventListener('click', filterTable);-->
+<!--  });-->
+<!--</script>-->
 
 </body>
 </html>

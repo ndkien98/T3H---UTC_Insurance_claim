@@ -14,8 +14,8 @@ import org.thymeleaf.util.Validate;
 public interface ClaimRepository extends JpaRepository<ClaimEntity, Long> {
 
     @Query("SELECT c FROM ClaimEntity c " +
-            "WHERE (:#{#request.claimCode} IS NULL OR LOWER(c.code) LIKE LOWER(CONCAT('%', :#{#request.claimCode}, '%'))) " +
-            "AND (:#{#request.statusCode} IS NULL OR c.claimStatusEntity.code = :#{#request.statusCode}) " +
+            "WHERE (:#{#request.claimCode} = '' OR LOWER(c.code) LIKE LOWER(CONCAT('%', :#{#request.claimCode}, '%'))) " +
+            "AND (:#{#request.statusCode} = '' OR c.claimStatusEntity.code = :#{#request.statusCode}) " +
             "AND (:#{#request.fromDateSearch} IS NULL OR c.claimDate >= :#{#request.fromDateSearch}) " +
             "AND (:#{#request.toDateSearch} IS NULL OR c.claimDate <= :#{#request.toDateSearch}) AND (c.deleted=false OR c.deleted is NULL) ")
     Page<ClaimEntity> findByCondition(@Param("request") ClaimRequest request, Pageable pageable);

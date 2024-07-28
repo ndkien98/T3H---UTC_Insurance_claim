@@ -13,12 +13,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/claims")
-public class ClaimController {
+public class ClaimResourceController {
 
     @Autowired
     private ClaimService claimService;
 
-    @GetMapping
+    @PostMapping
     public ResponseEntity<ResponsePage<List<ClaimDTO>>> getAll(@RequestBody(required = false) ClaimRequest claimRequest, Pageable pageable) {
         ResponsePage<List<ClaimDTO>> responsePage = claimService.getAllClaims(claimRequest,pageable);
         return ResponseEntity.ok(responsePage);
@@ -27,11 +27,6 @@ public class ClaimController {
     @GetMapping("/id")
     public ClaimDTO getById(@PathVariable Long id) {
         return claimService.getById(id);
-    }
-
-    @PostMapping
-    public ClaimDTO create(@RequestBody ClaimDTO claimDTO) {
-        return claimService.create(claimDTO);
     }
 
     @PutMapping("/id")
