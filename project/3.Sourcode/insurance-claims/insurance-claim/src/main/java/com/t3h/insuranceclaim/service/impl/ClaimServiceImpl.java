@@ -37,7 +37,6 @@ public class ClaimServiceImpl implements ClaimService {
         claimEntity = claimRepository.save(claimEntity);
         return claimMapper.toDTO(claimEntity);
     }
-
     @Override
     public ClaimDTO update(Long id, ClaimDTO claimDTO) {
         ClaimEntity claimEntity = claimRepository.findById(id)

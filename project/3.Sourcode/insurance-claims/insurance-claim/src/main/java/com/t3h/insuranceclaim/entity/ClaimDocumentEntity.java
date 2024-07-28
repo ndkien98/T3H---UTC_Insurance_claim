@@ -28,7 +28,4 @@ public class ClaimDocumentEntity extends BaseEntity {
     public ClaimDocumentEntity() {
 
     }
-
-
-    // Getters and Setters
 }
