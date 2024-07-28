@@ -33,4 +33,10 @@ public class ClaimResourceController {
     public void delete(@PathVariable Long id) {
         claimService.delete(id);
     }
+
+    @PostMapping()
+    public ResponseEntity<ResponsePage<List<ClaimDTO>>> getClaims(@RequestBody ClaimRequest request, Pageable pageable) {
+        ResponsePage<List<ClaimDTO>> responsePage = claimService.getAllClaims(request,pageable);
+        return ResponseEntity.ok(responsePage);
+    }
 }
