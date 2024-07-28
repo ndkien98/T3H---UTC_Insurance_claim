@@ -1,4 +1,4 @@
-package com.t3h.insuranceclaim.controller.page.admin;
+package com.t3h.insuranceclaim.controller.page.cms;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class DashboardController {
 
 
-    @GetMapping("admin/dashboard")
+    @GetMapping("cms/dashboard")
     public String getDashboard() {
-        return "admin/dashboard";
+        return "cms/dashboard";
     }
 
-    @PostMapping({"admin/","admin"})
+    @PostMapping({"cms/","admin"})
     public String getHome() {
-        return "redirect:/admin/dashboard";
+        return "redirect:/cms/dashboard";
     }
 
 }

@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/claimstatuss")
-public class ClaimStatusController {
+public class ClaimStatusResourceController {
 
     @Autowired
     private ClaimStatusService claimstatusService;

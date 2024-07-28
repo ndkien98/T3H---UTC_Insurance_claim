@@ -1,32 +1,27 @@
 package com.t3h.insuranceclaim.controller.resource;
 
 import com.t3h.insuranceclaim.dto.ClaimDTO;
+import com.t3h.insuranceclaim.dto.request.ClaimRequest;
+import com.t3h.insuranceclaim.dto.response.ResponsePage;
 import com.t3h.insuranceclaim.service.ClaimService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/claims")
-public class ClaimController {
+public class ClaimResourceController {
 
     @Autowired
     private ClaimService claimService;
 
-    @GetMapping
-    public List<ClaimDTO> getAll() {
-        return claimService.getAll();
-    }
 
     @GetMapping("/id")
     public ClaimDTO getById(@PathVariable Long id) {
         return claimService.getById(id);
-    }
-
-    @PostMapping
-    public ClaimDTO create(@RequestBody ClaimDTO claimDTO) {
-        return claimService.create(claimDTO);
     }
 
     @PutMapping("/id")

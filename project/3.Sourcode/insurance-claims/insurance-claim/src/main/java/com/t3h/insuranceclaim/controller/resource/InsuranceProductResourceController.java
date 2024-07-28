@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/insuranceproducts")
-public class InsuranceProductController {
+public class InsuranceProductResourceController {
 
     @Autowired
     private InsuranceProductService insuranceproductService;

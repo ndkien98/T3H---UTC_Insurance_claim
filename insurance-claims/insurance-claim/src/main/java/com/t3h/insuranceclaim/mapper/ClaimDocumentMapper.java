@@ -6,6 +6,6 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface ClaimDocumentMapper {
-    ClaimDocumentDTO toDTO(ClaimDocument claimdocument);
-    ClaimDocument toEntity(ClaimDocumentDTO claimdocumentDTO);
+    ClaimDocumentDTO toDTO(ClaimDocumentEntity claimdocument);
+    ClaimDocumentEntity toEntity(ClaimDocumentDTO claimdocumentDTO);
 }

@@ -1,7 +1,7 @@
 package com.t3h.insuranceclaim.service.impl;
 
 import com.t3h.insuranceclaim.dto.ClaimDocumentDTO;
-import com.t3h.insuranceclaim.entity.ClaimDocument;
+import com.t3h.insuranceclaim.entity.ClaimDocumentEntity;
 import com.t3h.insuranceclaim.mapper.ClaimDocumentMapper;
 import com.t3h.insuranceclaim.repository.ClaimDocumentRepository;
 import com.t3h.insuranceclaim.service.ClaimDocumentService;
@@ -29,21 +29,21 @@ public class ClaimDocumentServiceImpl implements ClaimDocumentService {
 
     @Override
     public ClaimDocumentDTO getById(Long id) {
-        ClaimDocument claimdocument = claimdocumentRepository.findById(id)
+        ClaimDocumentEntity claimdocument = claimdocumentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("ClaimDocument not found"));
         return claimdocumentMapper.toDTO(claimdocument);
     }
 
     @Override
     public ClaimDocumentDTO create(ClaimDocumentDTO claimdocumentDTO) {
-        ClaimDocument claimdocument = claimdocumentMapper.toEntity(claimdocumentDTO);
+        ClaimDocumentEntity claimdocument = claimdocumentMapper.toEntity(claimdocumentDTO);
         claimdocument = claimdocumentRepository.save(claimdocument);
         return claimdocumentMapper.toDTO(claimdocument);
     }
 
     @Override
     public ClaimDocumentDTO update(Long id, ClaimDocumentDTO claimdocumentDTO) {
-        ClaimDocument claimdocument = claimdocumentRepository.findById(id)
+        ClaimDocumentEntity claimdocument = claimdocumentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("ClaimDocument not found"));
         claimdocument = claimdocumentMapper.toEntity(claimdocumentDTO);
         claimdocument = claimdocumentRepository.save(claimdocument);

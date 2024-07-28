@@ -1,11 +1,11 @@
 package com.t3h.insuranceclaim.mapper;
 
-import com.t3h.insuranceclaim.entity.*;
-import com.t3h.insuranceclaim.dto.*;
+import com.t3h.insuranceclaim.dto.ClaimDocumentDTO;
+import com.t3h.insuranceclaim.entity.ClaimDocumentEntity;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface ClaimDocumentMapper {
-    ClaimDocumentDTO toDTO(ClaimDocument claimdocument);
-    ClaimDocument toEntity(ClaimDocumentDTO claimdocumentDTO);
+    ClaimDocumentDTO toDTO(ClaimDocumentEntity claimdocument);
+    ClaimDocumentEntity toEntity(ClaimDocumentDTO claimdocumentDTO);
 }
